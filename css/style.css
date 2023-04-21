@@ -1,0 +1,572 @@
+/*全体　共通
+最初から設定してあるので特に変更
+しなくても大丈夫です♪
+-----------------*/
+body {
+	font-family: Roboto, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+	line-height: 1.75;
+	font-size: 16px;
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/*　パディングをサイズ内側にする処理　*/
+* {
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*ーーーーーーーーーーー*/
+/*この下から記述*/
+/*ーーーーーーーーーーー*/
+
+
+
+
+
+/*どの部分のcssに対して
+命令をしているのかコメントを
+記載しよう！
+---------------------*/
+
+
+/*common
+---------------------*/
+/* .container {
+	max-width: 960px;
+} */
+
+
+
+/*main visual
+---------------------*/
+.mainVisual {
+	width: 100%;
+	background-image: url(img/mainbg.png);
+	background-size: cover;
+	background-position: center;
+	text-align: center;
+	/* margin: auto; */
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 500px;
+}
+
+
+
+.mainVisual h1 {
+	font-size: 48px;
+	margin-bottom: 40px;
+}
+
+.mainVisual p {
+	font-size: 36px;
+}
+
+
+
+/*header
+---------------------*/
+.wrapper1 {
+	width: 960px;
+	/* width: 100%; */
+	display: flex;
+	font-size: 21px;
+	height: 80px;
+	/* justify-content: space-between; */
+	align-items: center;
+	border-bottom: solid 1px #efefef;
+	/* margin: 0 96px; */
+	padding-left: 40px;
+	padding-right: 40px;
+
+}
+
+.headerimg,
+.wrapper1 ul {
+	flex-basis: 50%;
+}
+
+.logo {
+	width: 50%;
+}
+
+
+.ul1 {
+	/* わからん全体を囲むcontainerで指定した960pxの
+	50%にならぬ。なぜはみ出る↓ */
+	/* max-width: 50%; */
+	display: flex;
+	justify-content: space-between;
+	/* margin-left: auto; */
+	/* flex-shrink: 0; */
+}
+
+.ul1 li {
+	display: inline-block;
+	margin-right: 0;
+}
+
+.ul1 li a {
+	font-size: 21px;
+	margin-left: 30px;
+}
+
+/* .nav {
+	margin-left: 48px;
+} */
+
+
+
+
+/*about
+---------------------*/
+.wrapper3 {
+	text-align: center;
+	margin: 120px 0 40px;
+}
+
+.wrapper3 h2 {
+	color: yellow;
+	padding-bottom: 24px;
+}
+
+.wrapper3 h3 {
+	font-weight: normal;
+	padding-bottom: 64px;
+}
+
+.wrapper3 p {
+	padding-bottom: 40px;
+}
+
+/*スライダー*/
+
+.myslides-wrapper {
+	height: 240px;
+	overflow: hidden;
+	position: relative;
+}
+
+.myslides {
+	height: 240px;
+	white-space: nowrap;
+	position: absolute;
+	top: 0;
+	left: 0;
+	animation: loop 20s linear infinite;
+}
+
+.myslides img {
+	height: 240px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+@keyframes loop {
+
+	0%,
+	50% {
+		transform: translateX(0%);
+	}
+
+	25%,
+	75% {
+		transform: translateX(-50%);
+	}
+}
+
+
+
+/* course */
+
+.wrapper6container {
+	background: #fafafa;
+}
+
+.wrapper5 {
+	text-align: center;
+	margin: 64px 0;
+}
+
+.wrapper6,
+.wrapper6no2 {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.wrapper6 img,
+.wrapper6no2 img {
+	max-width: 50%;
+}
+
+.wrapper6-1 {
+	margin-left: 48px;
+	margin-right: 48px;
+}
+
+.wrapper6-1 h3 {
+	margin-bottom: 40px;
+}
+
+.wrapper6no2 {
+	flex-direction: row-reverse;
+}
+
+/* news */
+
+.wrapper7 {
+	text-align: center;
+	margin-top: 64px;
+	margin-bottom: 64px;
+}
+
+.wrapper7 h2 {
+	color: yellow;
+}
+
+.wrapper8 {
+	display: flex;
+	/* justify-content: space-evenly; */
+}
+
+.wrapper8 div:first-child {
+	margin-right: 32px;
+}
+
+.wrapper8 div:last-child {
+	margin-left: 32px;
+}
+
+.newsbox img {
+	margin-bottom: 32px;
+}
+
+.newsbox p:first-of-type {
+	margin-bottom: 24px;
+}
+
+.newsbox p:last-of-type {
+	/* line-height: 1.5; */
+}
+
+
+.btn {
+	display: block;
+	width: 300px;
+	height: 60px;
+	background-color: yellow;
+	color: white;
+	margin: 56px auto 48px;
+}
+
+/* access
+googlemapの付け方を調べて後でやる */
+
+.access {
+	/* text-align: center; */
+	background: #fafafa;
+}
+
+.wrapper9 {
+	padding-top: 64px;
+	margin-bottom: 64px;
+	text-align: center;
+}
+
+.wrapper9 h2 {
+	margin-bottom: 24px;
+}
+
+.map-container {
+	position: relative;
+	width: 100%;
+	padding-bottom: 56.25%;
+	/*16:9にするため*/
+}
+
+.map-iframe {
+	border: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.wrapper10 {
+	display: flex;
+	justify-content: center;
+	padding-top: 64px;
+	padding-bottom: 56px;
+	/*.ul2 liの24pxと合わせて80pxになるように*/
+}
+
+.ul2 li {
+	display: flex;
+	margin-bottom: 24px;
+}
+
+.ul2 li p:first-child {
+	flex: 0 0 auto;
+	min-width: 200px;
+}
+
+.ul2 li p:last-child {
+	flex: 1;
+}
+
+/* contact */
+/* .contact {
+	margin-top: 80px;
+	margin-bottom: 80px;
+} */
+
+.wrapper11 {
+	text-align: center;
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+
+.wrapper11 p:first-of-type {
+	margin-bottom: 64px;
+}
+
+.wrapper11 p:nth-of-type(2) {
+	margin-bottom: 32px;
+}
+
+.form-container {
+	margin: 0 196px;
+}
+
+form {
+	/* max-width: 960px; */
+	/*仮。あとで960に変える*/
+}
+
+label {
+	display: inline-block;
+	font-size: 14px;
+	/*仮*/
+	/* margin-top: 20px; */
+	/*仮*/
+	vertical-align: middle;
+}
+
+input[type="text"],
+input[type="email"] {
+	width: 328px;
+	height: 36px;
+	padding: 10px;
+	font-size: 16px;
+	/*paddingとfont-size合わせて36になるようにした*/
+	border: 1px solid #bfbfbf;
+	box-sizing: border-box;
+}
+
+input[type="submit"] {
+	display: block;
+	width: 298px;
+	height: 54px;
+	padding: 10px;
+	background: yellow;
+	color: white;
+	font-size: 18px;
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	cursor: pointer;
+}
+
+input[type="radio"] {
+	margin: 0 40px 0 0;
+	min-width: 24px;
+	/*仮*/
+}
+
+textarea {
+	width: 328px;
+	height: 108px;
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid #bfbfbf;
+	box-sizing: border-box;
+	resize: vertical;
+}
+
+.form-row,
+.form-row2,
+.form-row3 {
+	display: flex;
+	align-items: center;
+}
+
+.form-row {
+	margin-bottom: 24px;
+}
+
+.form-row-container {
+	display: flex;
+	/* flex-direction: column; */
+	/* margin-bottom: 24px; */
+}
+
+
+.form-row label {
+	flex-shrink: 0;
+	width: 120px;
+	margin-right: 120px;
+}
+
+.form-row-reason {
+	display: flex;
+	align-items: center;
+	/* align-items: flex-start; */
+	/*一時追加*/
+	/* margin-bottom: 120px; */
+}
+
+.form-row-reason p {
+	flex-shrink: 0;
+	width: 120px;
+	margin-right: 120px;
+	align-self: flex-start;
+	margin-top: 16px;
+	/*一時追加*/
+}
+
+.form-row-reason .reason-options {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+
+.form-row-reason .reason-option {
+	display: flex;
+	align-items: center;
+	margin-right: 10px;
+	/*仮*/
+}
+
+.reason-options {
+	margin-top: 16px;
+	/*form-rowのmargin-bottom24pxと合わせて40px*/
+	/* margin-bottom: 32px; */
+}
+
+.reason-option {
+	margin-bottom: 24px;
+}
+
+.reason-option label {
+	flex-shrink: 0;
+}
+
+.form-row-textarea {
+	display: flex;
+	align-items: flex-start;
+	margin-top: 8px;
+	/*reason-optionの24pxと合わせて32px*/
+	margin-bottom: 40px;
+}
+
+.form-row-textarea label {
+	flex-shrink: 0;
+	width: 120px;
+}
+
+/* トップボタン */
+
+#backToTopBtn {
+	display: none;
+	/* 最初はボタンを非表示にします */
+	position: fixed;
+	/* ボタンを画面に固定します */
+	bottom: 30px;
+	/* 画面の下から20pxの位置に配置します */
+	right: 30px;
+	/* 画面の右から20pxの位置に配置します */
+	background-color: #333;
+	/* ボタンの背景色を設定します */
+	color: #fff;
+	/* ボタンのテキスト色を設定します */
+
+	width: 60px;
+	height: 60px;
+
+	/* padding: 10px 20px; */
+	/* ボタンのパディングを設定します */
+	border: none;
+	/* ボタンのボーダーを削除します */
+	cursor: pointer;
+	/* マウスカーソルがボタン上にあるとき、ポインターに変更します */
+	border-radius: 5px;
+	/* ボタンの角を丸くします */
+}
+
+
+
+
+/* footer */
+
+footer {
+	text-align: center;
+	background: #707070;
+	color: white;
+	font-size: 18px;
+	padding-top: 32px;
+	padding-bottom: 32px;
+	margin-top: 200px;
+}
+
+
+
+
+/*ラジオボタン改造*/
+
+.custom-radio {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background: #f0ebe5;
+	border: 1px solid #bfbfbf;
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	/* 追加: 丸くするためのスタイル */
+	border-radius: 20%;
+	vertical-align: middle;
+	margin-right: 8px;
+}
+
+.custom-radio:checked {
+	background-color: #fff;
+	border: 1px solid #bfbfbf;
+}
+
+.custom-radio:checked::after {
+	content: '';
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	background-color: #007aff;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+/* 魔改造 */

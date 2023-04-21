@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チーズの怪人が出現</title>
+    <link rel="stylesheet" type="text/css" href="css/style3.css" />
+    <style>
+        #skipButton {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background-color: #F00;
+            color: #FFF;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            z-index: 100;
+        }
+
+        #skipButton:hover {
+            background-color: #900;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="skipButton" onclick="location.href='index4s.html'">Skip</button>
+
+
+    <audio id="audio" src="audio/kingbonbi.mp3" autoplay></audio>
+
+    <div class="black-screen">
+        <div class="center-text">まて！</div>
+    </div>
+    <img id="maoh" src="img/kaijin.jpg" alt="チーズ怪人の画像" />
+
+
+
+
+    <!-- 以下一旦追加したやつ２ -->
+    <div id="speech-bubble">
+        <p id="speech"></p>
+    </div>
+
+    <script>
+        // セリフを設定する
+        var speechText = "ボボゾ　ジョシ　ムソンムド　ザ！　　　　　　（訳: コード　より　プロンプト　だ！）";
+
+        // タイピングアニメーション用の変数
+        var i = 0;
+        var speed = 250; // 1文字あたりの表示速度（ミリ秒）
+
+        // セリフを表示する
+        document.getElementById("speech").innerHTML = "";
+        var typing = setInterval(function () {
+            if (i < speechText.length) {
+                document.getElementById("speech").innerHTML += speechText.charAt(i);
+                i++;
+            } else {
+                clearInterval(typing);
+            }
+        }, speed);
+
+    </script>
+
+
+
+
+
+    <!-- 以下一旦追加したやつ１ -->
+    <!-- <div id="dialogue">
+        <div id="bubble"></div>
+        <div id="text"></div>
+    </div>
+    <script>
+        setTimeout(function () {
+            var dialogue = document.getElementById("dialogue");
+            dialogue.style.display = "block";
+            var text = "ボボゾ　ジョシ　ムソンムド　ザ！";
+            var i = 0;
+            var typing = setInterval(function () {
+                document.getElementById("text").innerHTML += text.charAt(i);
+                i++;
+                if (i > text.length) {
+                    clearInterval(typing);
+                }
+            }, 50);
+        }, 1000);
+    </script>
+</body> -->
+
+
+
+
+
+    <!-- <script>
+        setTimeout(function () {
+            location.href = "index4.html";
+        }, 12000);
+
+    </script> -->
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>スターウォーズ風アニメーション</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            perspective: 300px;
+        }
+
+        .crawl-container {
+            font-family: 'Arial', sans-serif;
+            color: #ffd900;
+            font-size: 32px;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            transform-origin: 50% 100%;
+            animation: crawl 80s linear;
+        }
+
+        @keyframes crawl {
+            0% {
+                transform: rotateX(20deg) translateY(0);
+            }
+
+            100% {
+                transform: rotateX(20deg) translateY(-2500px);
+            }
+        }
+
+        /* ボタンを画面左上に配置する */
+        #play-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        /* スキップボタンのスタイル */
+        #skipButton {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background-color: #F00;
+            color: #FFF;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            z-index: 100;
+        }
+
+        #skipButton:hover {
+            background-color: #900;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="skipButton" onclick="location.href='index10s.html'">Skip</button>
+
+
+    <audio id="audio" src="audio/ending2.mp3" autoplay></audio>
+
+    <div class="crawl-container">
+        かつて、チーズアカデミーはHTML & CSSの知識と技術を<br>
+        学ぶ者たちが集う場所として栄えていた。<br>
+        だが、魔王ジピルの出現により、アカデミーは<br>
+        混乱に陥り、その平和は崩れ去った。<br>
+        <br>
+
+        魔王ジピルはチーズアカデミーを襲撃し、<br>
+        洗脳し、チーズの怪人に魔改造してしまった。<br>
+        アカデミーの栄光は影を潜め、暗黒の時代が始まった。<br>
+        <br>
+
+
+        しかし、仮面ライダーG'sの勇敢な戦いにより、<br>
+        チーズの怪人は倒され、洗脳から解放された。<br>
+        チーズの怪人は、自分が何をしていたのか悔いる<br>
+        ことになるだろう。<br>
+        <br>
+        そして、再びチーズアカデミーは平和を取り戻し、<br>
+        その知識と技術は次世代のGEEKたちに受け継がれる。<br>
+        これからもチーズアカデミーは、未来のGEEKたちが<br>
+        成長し、新たなチーズの伝説を生み出す場として、<br>
+        存在し続けることだろう。<br>
+        <br>
+        だがしかし、魔王ジピルはまだ生きている<br>
+        そしてさらに急激な速度で成長を続けている<br>
+        果たしてこの先エンジニアは生き残ることができるのか...<br>
+        俺たちの真の戦いはまだこれからだ...<br>
+    </div>
+
+    <!-- <script>
+        setTimeout(function () {
+            location.href = "index10.html";
+        }, 50000);
+
+    </script> -->
+</body>
+
+</html>

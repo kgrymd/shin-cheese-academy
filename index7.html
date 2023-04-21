@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>バトル！</title>
+    <style>
+        body {
+            background-color: #B5D0E8;
+        }
+
+        #battle-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+        }
+
+        .pokemon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #FFFFFF;
+            border: 3px solid #000000;
+            border-radius: 20px;
+            margin: 10px;
+        }
+
+        .pokemon img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .pokemon-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .moves-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .move {
+            padding: 10px;
+            background-color: #FFFFFF;
+            border: 3px solid #000000;
+            border-radius: 10px;
+            margin: 10px;
+            cursor: pointer;
+            /* コマンドがロードから２秒後にふわっとでてくるように */
+            animation: fadeIn 2s ease-out forwards;
+            animation-delay: 2s;
+            opacity: 0;
+        }
+
+        .move:hover {
+            background-color: #F2F2F2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <audio id="audio" src="audio/battlebgm2.mp3" autoplay></audio>
+
+
+    <audio id="power-audio" src="audio/power.mp3"></audio>
+    <audio id="yaaaa-audio" src="audio/yaaaa.mp3"></audio>
+    <audio id="width-audio" src="audio/width.mp3"></audio>
+    <audio id="height-audio" src="audio/height.mp3"></audio>
+
+
+    <div id="battle-wrapper">
+        <div class="pokemon">
+            <img src="img/kaijin.JPG" alt="チーズの怪人">
+            <div class="pokemon-name">チーズの怪人</div>
+            <div class="hp">HP: 50 / 50</div>
+        </div>
+        <div class="pokemon">
+            <img src="img/maskedridergs.png" alt="仮面ライダー">
+            <div class="pokemon-name">仮面ライダーG's</div>
+            <div class="hp">HP: 29 / 29</div>
+        </div>
+    </div>
+    <div class="moves-wrapper">
+        <div class="move" onclick="playWidthAudio(); resizeImgW(); reduceHp(1, 5);">WIDTH</div>
+        <div class="move" onclick="playHeightAudio(); resizeImgH(); reduceHp(1, 5);">HEIGHT</div>
+        <div class="move" onclick="playPowerAudio(); resizeImgWH(); reduceHp(1, 1); reduceHp(2, 5);">POWER</div>
+        <div class="move" onclick="playYaaaaAudio(); resizeImgWH(); reduceHp(1, 1); reduceHp(2, 5);">YAAAA</div>
+    </div>
+    <!-- WIDTHをクリックしたら半分に縮む実装 -->
+    <script>
+        // グローバル変数を追加してスケールを初期値に設定
+        var kaijinscaleX = 1;
+        var kaijinscaleY = 1;
+        var riderscaleX = 1;
+        var riderscaleY = 1;
+
+        function resizeImgW() {
+            kaijinscaleX *= 0.5; // スケールXを半分にする
+            document.querySelector('.pokemon:first-of-type img').style.transform = 'scale(' + kaijinscaleX + ', ' + kaijinscaleY + ')';
+        }
+
+        function resizeImgH() {
+            kaijinscaleY *= 0.5; // スケールYを半分にする
+            document.querySelector('.pokemon:first-of-type img').style.transform = 'scale(' + kaijinscaleX + ', ' + kaijinscaleY + ')';
+        }
+        function resizeImgWH() {
+            riderscaleX *= 0.95; // スケールXを95/100にする
+            document.querySelector('.pokemon:last-of-type img').style.transform = 'scale(' + riderscaleX + ', ' + riderscaleY + ')';
+
+            riderscaleY *= 0.95; // スケールYを95/100にする
+            document.querySelector('.pokemon:last-of-type img').style.transform = 'scale(' + riderscaleX + ', ' + riderscaleY + ')';
+        }
+
+    </script>
+    <!-- コマンド効果音の実装 -->
+    <script>
+        function playPowerAudio() {
+            var powerAudio = document.getElementById('power-audio');
+            powerAudio.play();
+        }
+
+    </script>
+    <script>
+        function playYaaaaAudio() {
+            var yaaaaAudio = document.getElementById('yaaaa-audio');
+            yaaaaAudio.play();
+        }
+
+    </script>
+    <script>
+        function playWidthAudio() {
+            var widthAudio = document.getElementById('width-audio');
+            widthAudio.play();
+        }
+
+    </script>
+    <script>
+        function playHeightAudio() {
+            var heightAudio = document.getElementById('height-audio');
+            heightAudio.play();
+        }
+
+    </script>
+
+    <!-- コマンドクリックしたらHPが減るコード -->
+    <script>
+        var hp1 = 50;
+        var hp2 = 29;
+
+        function reduceHp(pokemonIndex, amount) {
+            if (pokemonIndex === 1) {
+                hp1 -= amount;
+                document.querySelector('.pokemon:first-of-type .hp').textContent = 'HP: ' + hp1 + ' / 50';
+
+                if (hp1 <= 0) {
+                    window.location.href = 'index8-1.html'; // 勝ちページに遷移
+                }
+
+            } else if (pokemonIndex === 2) {
+                hp2 -= amount;
+                document.querySelector('.pokemon:last-of-type .hp').textContent = 'HP: ' + hp2 + ' / 29';
+
+                if (hp2 <= 0) {
+                    window.location.href = 'index8-2.html'; // 死亡ページに遷移
+                }
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

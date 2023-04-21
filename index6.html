@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仮面ライダーG's登場</title>
+    <link rel="stylesheet" type="text/css" href="css/style6.css" />
+
+</head>
+
+<body>
+
+    <audio id="audio" src="audio/henshin01.mp3" autoplay></audio>
+
+    <img src="img/maskedridergs.png" alt="仮面ライダーの画像" id="kamen-rider">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+                var kamenRider = document.getElementById('kamen-rider');
+                kamenRider.style.display = "block";
+            }, 3000);
+        });
+
+    </script>
+
+    <script>
+        setTimeout(function () {
+            location.href = "index6-2.html";
+        }, 12000);
+
+    </script>
+</body>
+
+</html>
