@@ -49,7 +49,7 @@ body {
 ---------------------*/
 .mainVisual {
 	width: 100%;
-	background-image: url(img/mainbg.png);
+	background-image: url(../img/mainbg.jpg);
 	background-size: cover;
 	background-position: center;
 	text-align: center;
